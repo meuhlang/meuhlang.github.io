@@ -1,0 +1,28 @@
+site_name: MeuhLang
+site_url: https://meuhlang.github.io/
+site_description: The MeuhLang organization
+site_author: VERDOÏA Laurent <verdoialaurent@gmail.com>
+copyright: Copyright © 2019-2021 VERDOÏA Laurent <verdoialaurent@gmail.com>
+
+remote_branch: main
+
+extra:
+  analytics:
+    provider: google
+    property: G-JTM3PRWNW6
+
+theme:
+  name: material
+  icon:
+    logo: material/cow
+  favicon: favicon.png
+
+# Explicitly disable the search.
+# By default, only search is loaded.
+plugins: []
+
+markdown_extensions:
+  - admonition
+  - pymdownx.emoji:
+      emoji_index: !!python/name:materialx.emoji.twemoji
+      emoji_generator: !!python/name:materialx.emoji.to_svg

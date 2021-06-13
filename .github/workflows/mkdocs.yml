@@ -1,0 +1,36 @@
+name: mkdocs
+
+on: push
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-python@v2
+        with:
+          python-version: 3.9
+      - name: Install mkdocs
+        run: |
+          pip install \
+            mkdocs-material==7.1.8 \
+            mkdocs==1.2
+      - name: Build
+        run: |
+          mkdocs build \
+            --clean \
+            --config-file ./site/mkdocs.yml \
+            --strict
+      - name: Package website
+        run: tar -cvzf website.tar -C site site
+      - uses: actions/upload-artifact@v2
+        with:
+          name: website
+          path: website.tar
+      - name: Deploy
+        if: ${{ github.ref == 'refs/heads/main' }}
+        uses: JamesIves/github-pages-deploy-action@4.1.4
+        with:
+          branch: gh-pages
+          folder: site/site
+          git-config-name: ${{ github.event.head_commit.author.name }}
