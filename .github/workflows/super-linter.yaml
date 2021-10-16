@@ -1,6 +1,6 @@
 name: GitHub Super-Linter
 
-on: [push, pull_request]
+on: push
 
 ###############
 # Set the Job #
