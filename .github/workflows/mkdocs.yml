@@ -4,10 +4,10 @@ on: push
 
 jobs:
   build:
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
     steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-python@v2
+      - uses: actions/checkout@v2.3.5
+      - uses: actions/setup-python@v2.2.2
         with:
           python-version: 3.9
       - name: Install mkdocs
@@ -23,7 +23,7 @@ jobs:
             --strict
       - name: Package website
         run: tar -cvzf website.tar -C site site
-      - uses: actions/upload-artifact@v2
+      - uses: actions/upload-artifact@v2.2.4
         with:
           name: website
           path: website.tar
