@@ -13,12 +13,12 @@
 # You should have received a copy of the GNU General Public License
 # along with this program.  If not, see <https://www.gnu.org/licenses/>.
 
-FROM python:3.9.5-slim-buster
+FROM python:3.10.0-slim-bullseye
 
 RUN pip install \
         --disable-pip-version-check \
         --no-cache-dir \
-        mkdocs-material==7.1.8 \
-        mkdocs==1.2
+        mkdocs-material==7.3.3 \
+        mkdocs==1.2.3
 
 CMD ["/usr/local/bin/mkdocs"]
