@@ -2,35 +2,15 @@ name: GitHub Super-Linter
 
 on: push
 
-###############
-# Set the Job #
-###############
 jobs:
   build:
-    # Name the Job
     name: Lint Code Base
-    # Set the agent to run on
     runs-on: ubuntu-20.04
 
-    ##################
-    # Load all steps #
-    ##################
     steps:
-      ##########################
-      # Checkout the code base #
-      ##########################
-      - name: Checkout Code
-        uses: actions/checkout@v2.3.5
-
-      ################################
-      # Run Linter against code base #
-      ################################
+      - uses: actions/checkout@v2.3.5
       - name: Lint Code Base
         uses: github/super-linter@v4.8.1
         env:
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          FILTER_REGEX_EXCLUDE: site/docs/about/license.md
-          VALIDATE_CSS: false
-          VALIDATE_JAVASCRIPT_ES: false
-          VALIDATE_JAVASCRIPT_STANDARD: false
