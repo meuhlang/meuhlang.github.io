@@ -22,7 +22,7 @@ jobs:
             --config-file ./site/mkdocs.yml \
             --strict
       - name: Package website
-        run: tar -cvzf website.tar -C site site
+        run: tar -cvzf website.tar.gz -C site site
       - uses: actions/upload-artifact@v2.2.4
         with:
           name: website
