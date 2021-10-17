@@ -11,18 +11,16 @@ jobs:
         with:
           python-version: 3.10.0
       - name: Build
-        uses: docker://lvjp/mkdocs:v1.2.3-2
-        run: |
-          mkdocs build \
-            --clean \
-            --config-file ./site/mkdocs.yml \
-            --strict
+        uses: meuhlang/mkdocs-docker@v1.2.3-3
+        with:
+          strict: true
+          configfile: ./site/mkdocs.yml
       - name: Package website
         run: tar -cvzf website.tar.gz -C site site
       - uses: actions/upload-artifact@v2.2.4
         with:
           name: website
-          path: website.tar
+          path: website.tar.gz
       - name: Deploy
         if: ${{ github.ref == 'refs/heads/main' }}
         uses: JamesIves/github-pages-deploy-action@4.1.5
