@@ -15,7 +15,7 @@ poc.syscall
 :   Try to implement some syscall with llvm. ([:fontawesome-brands-github:][poc.syscall-src])
 
 meuhlang.github.io
-:   This website source code ([:fontawesome-brands-github:][meuhlang.github.io-src], [:material-web:][meuhlang.github.io-site])
+:   This site source code ([:fontawesome-brands-github:][meuhlang.github.io-src], [:material-web:][meuhlang.github.io-site])
 
 mkdocs-docker
 :   A simple docker wrapper for mkdocs. ([:fontawesome-brands-github:][mkdocs-docker-src])
