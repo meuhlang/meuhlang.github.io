@@ -14,7 +14,7 @@ jobs:
           configfile: ./site/mkdocs.yml
       - name: Package website
         run: tar -cvzf website.tar.gz -C site site
-      - uses: actions/upload-artifact@v2.3.0
+      - uses: actions/upload-artifact@v2.3.1
         with:
           name: website
           path: website.tar.gz
