@@ -9,7 +9,7 @@ main() {
   docker run \
     --env RUN_LOCAL=true \
     --mount "type=bind,src=${PWD},dst=/tmp/lint" \
-    github/super-linter:v4.8.1
+    github/super-linter:v4.9.0
 }
 
 main "$@"
